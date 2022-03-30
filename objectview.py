@@ -4,7 +4,7 @@
 # Baseline of GUI and Search Engine derived from tutorial from Izzy Analytics
 # Video: https://www.youtube.com/watch?v=IWDC9vcBIFQ
 # Repo: https://github.com/israel-dryer/File-Search-Engine
-# bl3refs.sqlite3 provided by apocalyptech (edit)
+# Wonderlands version of my BL3 Object Explorer
 
 # Copyright (C) 2022-2023 Angel LaVoie
 # https://github.com/SSpyR
@@ -310,14 +310,14 @@ def get_object_data(window):
 	global data_path
 
 	if not os.path.exists(zipname):
-		zipurl='https://github.com/SSpyR/BL3-Object-Explorer/blob/main/utils/objects.zip?raw=true'
+		zipurl='https://github.com/SSpyR/TTWL-Object-Explorer/blob/main/utils/objects.zip?raw=true'
 		zr=requests.get(zipurl, allow_redirects=True)
 		open(os.path.join(data_path, 'objects.zip'), 'wb').write(zr.content)
 
 	if not os.path.exists(sqlname):
-		sqlurl='https://github.com/SSpyR/BL3-Object-Explorer/blob/main/utils/bl3refs.sqlite3?raw=true'
+		sqlurl='https://github.com/SSpyR/TTWL-Object-Explorer/blob/main/utils/ttwlrefs.sqlite3?raw=true'
 		sr=requests.get(sqlurl, allow_redirects=True)
-		open(os.path.join(data_path, 'bl3refs.sqlite3'), 'wb').write(sr.content)
+		open(os.path.join(data_path, 'ttwlrefs.sqlite3'), 'wb').write(sr.content)
 
 	window.close()
 	return True
@@ -334,7 +334,7 @@ def data_validity_check():
 	if not os.path.exists(data_path):
 		os.mkdir(data_path)
 
-	url='https://raw.githubusercontent.com/SSpyR/BL3-Object-Explorer/main/data_ver.txt'
+	url='https://raw.githubusercontent.com/SSpyR/TTWL-Object-Explorer/main/utils/data_ver.txt'
 	data_ver_path=os.path.join(data_path, 'data_ver.txt')
 
 	if not os.path.exists(data_ver_path):

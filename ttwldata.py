@@ -36,26 +36,25 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#TODO This is Wonderlands version, edit as such
 
 import os
 import sqlite3
 
 class TTWLData(object):
     """
-    Class to assist in programmatically inspecting Borderlands 3 data as much as
+    Class to assist in programmatically inspecting Wonderlands data as much as
     possible.  The first time this class is instantiated, it'll create a config
     file and then error out.  To use the class, populate at least the "filesystem"
     section of the config file (the path will be provided on the console).
 
     The "filesystem" section contains two config values:
 
-        1) data_dir - This is a directory containing data extracted from the BL3
+        1) data_dir - This is a directory containing data extracted from the TTWL
            .pak files using UnrealPak.  It should also be processed so that the
            pathnames on the filesystem match the object names exactly.
 
         2) ueserialize_path - This is the path to a 'ueserialize' binary from the
-           JohnWickParse project, used to serialize borderlands .uasset/.umap files
+           JohnWickParse project, used to serialize wonderlands .uasset/.umap files
            to a JSON object.  This is what's used to process the extracted data into
            a format we can work with, on an on-demand basis.
 
@@ -63,9 +62,9 @@ class TTWLData(object):
            https://github.com/apocalyptech/JohnWickParse/releases
 
     The "database" section contains the single parameter "dbfile", which should be
-    the path to the SQLite BL3 reference data, available at:
+    the path to the SQLite TTWL reference data, available at:
 
-        http://apocalyptech.com/games/bl3-refs/
+        http://apocalyptech.com/games/wl-refs/
 
     This is only required if you want to use the `get_refs_to()` or `get_refs_from()`
     methods of this class.
