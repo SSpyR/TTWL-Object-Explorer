@@ -32,9 +32,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #TODO Probably needs more error handling
-#TODO This is Wonderlands One btw, make edits to mark as such
-#TODO Edit README for Wonderlands stuffs
-#TODO References are in working order, just work out objects and downloading from GitHub and setting up Repo
+#TODO Ship Debug EXE that has Console Window
 
 #NOTE#
 # When Updating Objects, Run Visual Studio Code JSON Format on all files within Game Folder #
@@ -47,7 +45,7 @@ from ttwldata import TTWLData
 #from pygments import highlight, lexers, formatters
 """
 Initializing some Global Values for ease of use
-Version Number: 0.1.0
+Version Number: 0.1.1
 """
 data=TTWLData()
 results=[]
@@ -296,7 +294,6 @@ def get_json(file_name):
 		with zip.open(file_name) as file:
 			data=file.read()
 			data=data.decode('utf-8')
-			print(data)
 			data=data.strip('\n')
 			#colorful_data=highlight(data, lexers.JsonLexer(), formatters.Terminal256Formatter())
 			
