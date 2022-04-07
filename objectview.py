@@ -45,7 +45,7 @@ from ttwldata import TTWLData
 #from pygments import highlight, lexers, formatters
 """
 Initializing some Global Values for ease of use
-Version Number: 0.1.1
+Version Number: 0.1.2
 """
 data=TTWLData()
 results=[]
@@ -350,6 +350,9 @@ def data_validity_check():
 			else:
 				print('Version not up to date')
 				open(data_ver_path, 'wb').write(r.content)
+				if os.path.exists(zipname) or os.path.exists(sqlname):
+					os.remove(zipname)
+					os.remove(sqlname)
 				pygui.downloadwindow()
 
 	return True
