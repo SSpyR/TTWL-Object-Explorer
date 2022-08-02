@@ -33,10 +33,8 @@
 
 #TODO Probably needs more error handling
 #TODO Ship Debug EXE that has Console Window
+#TODO Check out Python RichAPI for Coloring Window?
 
-#NOTE#
-# When Updating Objects, Run Visual Studio Code JSON Format on all files within Game Folder #
-#NOTE#
 
 import os, requests, pygments, json
 import PySimpleGUI as gui
